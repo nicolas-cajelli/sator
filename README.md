@@ -1,11 +1,15 @@
 Iniciar base de datos:
+```
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -v $PWD:/data -p 3306:3306 -d mysql
 mysql -h localhost -u root -p -e"CREATE DATABASE words;"
 mysql -h localhost -u root -p words -e"CREATE TABLE `words` ( `word` varchar(200) NOT NULL, KEY `word` (`word`))"
 mysql -h localhost -u root -p words < es.txt 
+```
 
 Correr query:
+```
 mysql -h localhost -u root -p words < /data/query.sql
+```
 
 Ejemplo de output:
 
